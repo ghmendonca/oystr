@@ -48,7 +48,7 @@ export class WebService {
     }
 
     async getLinks(): Promise<LinkDetails[]> {
-        return await this.page.$$eval('a', links => links.map<LinkDetails>((link: HTMLAnchorElement) => ({
+        return await this.page.$$eval('a', (links: HTMLAnchorElement[]) => links.map<LinkDetails>((link: HTMLAnchorElement) => ({
             internal: link.hostname === location.hostname || !link.hostname,
             text: link.text,
             url: link.href

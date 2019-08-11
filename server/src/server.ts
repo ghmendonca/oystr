@@ -11,6 +11,9 @@ const rootDir = __dirname;
         "${rootDir}/services/**/*.ts",
         "${rootDir}/resolvers/**/*.ts"
     ],
+    statics: {
+        '/': '../client/build'
+    },
     graphql: {
         'server1': {
             path: '/graphql',

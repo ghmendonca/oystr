@@ -10,7 +10,7 @@ import './css/tailwind.css'
 
 const client = new ApolloClient({
     link: new HttpLink({
-        uri: 'http://localhost/graphql'
+        uri: process.env.REACT_APP_API_URL || 'http://localhost/graphql'
     }),
     cache: new InMemoryCache()
 })
